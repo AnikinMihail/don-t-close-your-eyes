@@ -183,13 +183,13 @@ MonoBehaviour:
     m_Value: 1
   additionalLightsAnisotropy:
     m_OverrideState: 1
-    m_Value: 0.62
+    m_Value: 0.89
   additionalLightsScattering:
     m_OverrideState: 1
-    m_Value: 2.36
+    m_Value: 3.8
   additionalLightsRadius:
     m_OverrideState: 1
-    m_Value: 0.106
+    m_Value: 0
   maxSteps:
     m_OverrideState: 0
     m_Value: 64
