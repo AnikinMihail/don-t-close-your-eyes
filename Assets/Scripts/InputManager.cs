@@ -58,4 +58,9 @@ public class InputManager : MonoBehaviour
     {
         return _playerControls.Player.Interact.triggered;
     }
+
+    public bool PlayerRunningThisFrame()
+    {
+        return _playerControls.Player.Run.ReadValue<float>() > 0.1f;
+    }
 }

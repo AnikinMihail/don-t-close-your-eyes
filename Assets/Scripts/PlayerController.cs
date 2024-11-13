@@ -31,6 +31,17 @@ public class PlayerController : MonoBehaviour
             _playerVelocity.y = 0f;
         }
 
+        Debug.Log(_inputManager.PlayerRunningThisFrame());
+        if (_inputManager.PlayerRunningThisFrame())
+        {
+            playerSpeed = 5.0f;
+        }
+        else
+        {
+            playerSpeed = 2.0f;
+
+        }
+
         Vector2 movement = _inputManager.GetPlayerMovement();
         Vector3 move = new Vector3(movement.x, 0f, movement.y);
         move = _cameraTransform.forward * move.z + _cameraTransform.right * move.x;
