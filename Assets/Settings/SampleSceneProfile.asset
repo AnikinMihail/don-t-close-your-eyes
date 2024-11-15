@@ -68,10 +68,10 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.25
+    m_Value: 0.211
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.4
+    m_Value: 1
   rounded:
     m_OverrideState: 0
     m_Value: 0
@@ -162,7 +162,7 @@ MonoBehaviour:
     m_Value: 0
   density:
     m_OverrideState: 1
-    m_Value: 0.117
+    m_Value: 0.078
   attenuationDistance:
     m_OverrideState: 0
     m_Value: 128
@@ -183,13 +183,13 @@ MonoBehaviour:
     m_Value: 1
   additionalLightsAnisotropy:
     m_OverrideState: 1
-    m_Value: 0.89
+    m_Value: 0.817
   additionalLightsScattering:
     m_OverrideState: 1
-    m_Value: 3.8
+    m_Value: 4.17
   additionalLightsRadius:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.12
   maxSteps:
     m_OverrideState: 0
     m_Value: 64
