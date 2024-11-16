@@ -4,6 +4,10 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance { get; private set; }
+    public event EventHandler OnMonsterInView;
+    public event EventHandler OnMonsterLeft;
+    
     [SerializeField] private float playerSpeed = 2.0f;
     [SerializeField] private float jumpHeight = 1.0f;
     [SerializeField] private float gravityValue = -9.81f;
@@ -15,12 +19,24 @@ public class PlayerController : MonoBehaviour
     private Transform _cameraTransform;
 
 
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {
         _controller = GetComponent<CharacterController>();
         _inputManager = InputManager.Instance;
         _cameraTransform = Camera.main.transform;
+        
     }
 
     void Update()
@@ -31,7 +47,6 @@ public class PlayerController : MonoBehaviour
             _playerVelocity.y = 0f;
         }
 
-        Debug.Log(_inputManager.PlayerRunningThisFrame());
         if (_inputManager.PlayerRunningThisFrame())
         {
             playerSpeed = 5.0f;
@@ -59,4 +74,13 @@ public class PlayerController : MonoBehaviour
         transform.forward = _cameraTransform.forward;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        OnMonsterInView?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        OnMonsterLeft?.Invoke(this, EventArgs.Empty);
+    }
 }

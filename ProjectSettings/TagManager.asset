@@ -8,10 +8,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - NonStatic
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
